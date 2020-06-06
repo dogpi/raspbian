@@ -1,1 +1,7 @@
 # raspbian
+开启ssh服务
+    在boot文件夹(TF卡的根木库)下创建一个名为ssh的空文件。
+
+设置自动连接WiFi
+    同样在跟目录下创建一个文件名为：wpa_supplicant.conf
+    内容见同名文件
