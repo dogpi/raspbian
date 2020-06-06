@@ -6,7 +6,7 @@
 设置WiFi连接：
       1、创建名为wpa_supplicant.conf的文件
       2、添加内容如下
-        country=CN
+      country=CN
         ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
         update_config=1
         network={
