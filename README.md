@@ -9,3 +9,4 @@
 安装mysql:
     sudo apt-get update
     sudo apt-get install default-mysql-server
+
