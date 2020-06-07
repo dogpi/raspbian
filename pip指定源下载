@@ -1,1 +1,2 @@
 pip install jupyter -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+python3 -m pip install jupyter -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
