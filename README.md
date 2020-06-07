@@ -10,3 +10,5 @@
     sudo apt-get update
     sudo apt-get install default-mysql-server
 
+pip指定源下载安装包：
+    见文件
