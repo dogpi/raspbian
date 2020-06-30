@@ -1,0 +1,33 @@
+1、先使用TF卡启动
+  sudo apt update
+  sudo apt full-upgrade
+
+2、
+  sudo vim /etc/default/rpi-eeprom-update
+  ---->FIRMWARE_RELEASE_STATUS="beta"
+3、
+  sudo rpi-eeprom-update -d -f
+  或
+  sudo rpi-eeprom-update -d -f /lib/firmware/raspberrypi/bootloader/beta/pieeprom-2020-05-15.bin
+4、
+  rpi-eeprom-update
+  如果BOOTLOADER的版本在2020-05-15及以上就可以USB启动了。
+5、
+  重启。重新进入系统后，运行：
+
+    vcgencmd bootloader_version 
+    vcgencmd bootloader_config
+
+  分别确认显示的是May 15 2020的bootloader，以及BOOT_ORDER=0xf41
+6、（未做此操作也成功了）
+  在日常工作PC上，下载 https://github.com/raspberrypi/firmware/archive/master.zip，然后烧录Raspbian到SSD移动硬盘盒上。
+  解压master.zip，将boot目录下的*.elf和*.dat覆盖ssd的boot分区里的同名文件。（尝试过覆盖所有文件，但会导致直连USB的键鼠不可用）
+7、拔掉TF插上硬盘盒，正常启动
+8、修改文件系统大小
+  df -h 查看大小
+  sudo raspi-config
+  ---->Advanced Options
+  ---->Expand File System....
+  
+  sudo reboot
+  df -h 查看大小
